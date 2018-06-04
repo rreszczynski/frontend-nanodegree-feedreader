@@ -24,7 +24,6 @@ $(function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
-            expect(allFeeds.length).not.toBeNull();
         });
 
 
@@ -35,7 +34,7 @@ $(function() {
         it('have not empty URLs defined', function() {
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
-                expect(feed.url).not.toBeNull();
+                expect(feed.url.length).toBeGreaterThan(0);
             });
         });
 
@@ -46,7 +45,7 @@ $(function() {
          it('have not empty Names defined', function(){
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name).not.toBeNull();
+                expect(feed.name.length).toBeGreaterThan(0);
             });
          });
     });
